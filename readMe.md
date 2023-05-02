@@ -13,7 +13,9 @@ When a user clicks on a country from the list of search results, they will be ta
 This project was built using React, Bootstrap 5, JavaScript, and the REST Countries API. The following libraries and tools were used:
 
 React-router-dom: to navigate through the different pages
+
 React-bootstrap: to simplify the design by using pre-built components
+
 
 ## Lessons Learned
 My primary goal with this project was to strengthen my skillsets with React and Bootstrap. While working on this project, I created a responsive, informative, and user-friendly website.  
