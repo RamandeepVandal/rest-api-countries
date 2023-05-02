@@ -1,4 +1,4 @@
-### REST Countries Front-End Project
+# REST Countries Front-End Project
 This is a front-end project that uses the REST Countries API to allow users to search for countries, view details about each country, and filter countries by continent.
 
 ## Getting Started
