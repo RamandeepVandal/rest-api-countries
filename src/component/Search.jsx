@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export const Search = ({ changeContinent, handleClick }) => {
   // user search
@@ -14,7 +14,7 @@ export const Search = ({ changeContinent, handleClick }) => {
   // user searches for specific country 
   const searchCountry = async (name) => {
     const res = await fetch(
-      import.meta.env.VITE_SEARCH_API
+      `https://restcountries.com/v3.1/name/${name}?fields=name,flags,currencies,languages,capital,population,region,subregion`
     );
     const data = await res.json();
     setSearchData(data);

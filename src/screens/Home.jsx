@@ -20,7 +20,7 @@ export const Home = () => {
   // fetch data
   const getCountries = async () => {
     const res = await fetch(
-      import.meta.env.VITE_API_KEY
+      `https://restcountries.com/v3.1/all?fields=name,flags,currencies,languages,capital,population,region,subregion`
     );
     const data = await res.json();
     setCountries(data);
@@ -48,7 +48,7 @@ export const Home = () => {
   // user selects different continent
   const changeContinent = async (userSelection) => {
     const res = await fetch(
-     import.meta.env.VITE_SELECTION_API
+     `https://restcountries.com/v3.1/region/${userSelection}?fields=name,flags,currencies,languages,capital,population,region,subregion`
     );
     const data = await res.json();
     setContinent(data);
@@ -62,14 +62,14 @@ export const Home = () => {
         <Search changeContinent={changeContinent} handleClick={handleClick}/>
         <div className="container d-flex justify-content-center flex-wrap primary-section">
           {option
-            ? copyCountries.slice(0, 8).map((country, key) => {
+            ? copyCountries?.slice(0, 8).map((country, key) => {
                 return (
                   <div
                     className="card p-3 m-3 card-country"
                     key={key}
                     style={{ width: 15 + "em" }}
                     onClick={() => handleClick(country)}
-                  >
+                  > 
                     <img
                       src={country?.flags?.png}
                       alt="country flag"
@@ -87,7 +87,7 @@ export const Home = () => {
                   </div>
                 );
               })
-            : copyContinent.slice(0, 8).map((country, key) => {
+            : copyContinent?.slice(0, 8).map((country, key) => {
                 return (
                   <div
                     className="card p-3 m-3 card-country"
